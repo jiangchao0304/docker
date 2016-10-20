@@ -35,21 +35,24 @@ RUN tar xvf jdk-7u79-linux-x64.tar.gz -C /opt/java && \
 #配置JAVA_HOME M2_HOME
 
 ENV JAVA_HOME=/opt/java/jdk1.7.0_79 
-ENV PATH=$PATH:/opt/maven/apache-maven-3.3.9/bin:$JAVA_HOME/bin 
+ENV MAVEN_HOME =/opt/maven/apache-maven-3.3.9
+ENV JRE_HOME $JAVA_HOME/jre 
+ENV PATH=$PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/lib
 ENV CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
 
 #安装jenkins
 RUN wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 RUN yum install -y jenkins
+# http://mirrors.jenkins-ci.org/war/latest/jenkins.war
+EXPOSE 8080
 
+CMD exec java  -jar /usr/lib/jenkins/jenkins.war 
 
-
-# 容器需要开放Tomcat 8080端口
-#EXPOSE 8080
-
+#RUN (wget && wget && tar)
 # 设置Tomcat7作为后台运行
 #ENTRYPOINT /opt/tomcat/bin/startup.sh && tail -f /opt/tomcat/logs/catalina.out
+#ENTRYPOINT ["java","-jar","/usr/lib/jenkins/jenkins.war"]
 
 
 
