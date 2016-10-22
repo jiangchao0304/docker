@@ -25,10 +25,10 @@ RUN tar xvf jdk-7u79-linux-x64.tar.gz -C /opt/java && \
 
 #配置JAVA_HOME 
 
-ENV JAVA_HOME /opt/java/jdk1.7.0_79 
-ENV JRE_HOME $JAVA_HOME/jre 
+ENV JAVA_HOME /opt/java/jdk1.7.0_79
+ENV JRE_HOME $JAVA_HOME/jre
 ENV PATH $PATH:$JAVA_HOME/bin:$JRE_HOME/lib
-ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
+ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 CMD ["/bin/bash"]
 
