@@ -10,7 +10,7 @@ FROM centos
 MAINTAINER jc0304 <14317048@qq.com>
 
 # Install wget.
-RUN yum ( install -y  wget && mkdir /opt/java )
+RUN  ( yum install -y  wget && mkdir /opt/java )
 
 
 # Install Java.
