@@ -21,7 +21,7 @@ RUN wget --no-cookies --no-check-certificate \
 
 #解压并删除下载的包
 RUN tar xvf jdk-7u79-linux-x64.tar.gz -C /opt/java && \
-    rm -rf jdk-7u79-linux-x64.tar.gz && 
+    rm -rf jdk-7u79-linux-x64.tar.gz
 
 #配置JAVA_HOME 
 
