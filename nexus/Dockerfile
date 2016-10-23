@@ -44,7 +44,10 @@ ENV PATH $PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin:
 
 ENV RUN_AS_USER root
 
-ENTRYPOINT ["./opt/nexus/nexus-2.14.0-01/bin/nexus","start"]
+EXPOSE 8081
+
+
+ENTRYPOINT ["./opt/nexus/nexus-2.14.0-01/bin/nexus","console"]
 
 
 
