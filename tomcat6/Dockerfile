@@ -18,8 +18,13 @@ MAINTAINER jc0304 <14317048@qq.com>
 
 #install jdk
 RUN yum -y install java-1.6.0-openjdk.x86_64 wget
-RUN wget http://mirrors.cnnic.cn/apache/tomcat/tomcat-6/v6.0.45/bin/apache-tomcat-6.0.45.tar.gz 
-RUN tar xvf apache-tomcat-6.0.45.tar.gz -C /opt &&  mv /opt/apache-tomcat-6.0.45/ /opt/tomcat && rm -rf apache-tomcat-6.0.45 && rm -rf apache-tomcat-6.0.45.tar.gz
+
+RUN wget http://mirrors.hust.edu.cn/apache/tomcat/tomcat-6/v6.0.47/bin/apache-tomcat-6.0.47.tar.gz
+
+RUN tar xvf apache-tomcat-6.0.47.tar.gz -C /opt && \
+     mv /opt/apache-tomcat-6.0.47/ /opt/tomcat && \
+	 rm -rf apache-tomcat-6.0.47 && \
+	 rm -rf apache-tomcat-6.0.47.tar.gz
 
 # 容器需要开放Tomcat 8080端口
 EXPOSE 8080

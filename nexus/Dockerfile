@@ -47,7 +47,8 @@ ENV RUN_AS_USER root
 EXPOSE 8081
 
 
-ENTRYPOINT ["./opt/nexus/nexus-2.14.0-01/bin/nexus","console"]
+#ENTRYPOINT ["./opt/nexus/nexus-2.14.0-01/bin/nexus","console"]
+ENTRYPOINT ./opt/nexus/nexus-2.14.0-01/bin/nexus start && tail -f /opt/nexus/nexus-2.14.0-01/logs/wrapper.log
 
 
 
