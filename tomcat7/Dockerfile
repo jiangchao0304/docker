@@ -19,10 +19,9 @@ RUN wget http://apache.fayea.com/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.7
 # install
 RUN tar xvf jdk-7u79-linux-x64.tar.gz -C /opt/java && \
 	rm -rf jdk-7u79-linux-x64.tar.gz && \
-	tar xvf apache-tomcat-7.0.72.tar.gz -C /opt && \
-	mv /opt/apache-tomcat-7.0.72/ /opt/tomcat && \
-	rm -rf apache-tomcat-7.0.72 && \
-	rm -rf apache-tomcat-6.0.45.tar.gz
+	tar xvf apache-tomcat-7.0.72.tar.gz -C /opt/tomcat && \
+	rm -rf apache-tomcat-7.0.72 
+
 
 #配置JAVA_HOME 
 
