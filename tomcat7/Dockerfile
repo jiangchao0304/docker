@@ -34,5 +34,5 @@ ENV CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 EXPOSE 8080
 
 # 设置Tomcat7作为后台运行
-ENTRYPOINT /opt/tomcat/bin/startup.sh && tail -f /opt/tomcat/logs/catalina.out
+ENTRYPOINT /opt/tomcat/apache-tomcat-7.0.72/bin/startup.sh && tail -f /opt/tomcat/apache-tomcat-7.0.72/logs/catalina.out
 
